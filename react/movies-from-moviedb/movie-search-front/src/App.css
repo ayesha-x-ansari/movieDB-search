@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.col-3 p {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+}
+
+
+.shadow {
+  box-shadow: 0 3px 10px #333;
+}
+
+
+.col-2 {
+  float: left;
+  width: 66%;
+}
+
+
+.col-1 {
+  float: left;
+  width: 32%;
+  padding-left: 50px  ;
+}
+
+
+table {
+  margin: 0 0 20px;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+tr:nth-child(even) {
+  background: #efefef;
+}
+
+
+.titleBar {
+  background-color: #b383b4;
+  display: block;
+  color: white;
+  height: 60px;
+  font-family: Arial, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.column 
+{
+  border-right:1px solid white;
+}
+
+.link-decor
+{
+  text-decoration: none;
+  color: white;
+}
+
+
+.link
+{
+  text-decoration: none;
+}
+
+
+.padding-left {
+  padding-left: 20px;
+  padding-right: 20px;
+}
