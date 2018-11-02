@@ -27,6 +27,8 @@ class ConnectedForm extends Component {
     const { title, commentator, comment } = this.state;
     this.props.addComment({ title, commentator, comment });
     this.setState({ title: "", commentator: "" , comment: ""  });
+    this.props.history.push('/comments')
+    
   }
 
 

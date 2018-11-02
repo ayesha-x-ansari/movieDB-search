@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 import '../../App.css';
 
 const Navbar = ()  => {
@@ -25,18 +25,18 @@ const Navbar = ()  => {
                    <td width="10" className="column"/>
                    <td width="10"/>
                    <td>
-                      <Link to="/" className="link-decor">  Home Page </Link>
+                      <NavLink to="/" exact className="link-decor" activeStyle={{ color:'blue'}}>  Home Page </NavLink>
                    </td>
                    <td width="10" className="column"/>
                    < td width="10"/>
                    <td>
-                     <Link to="/new"  className="link-decor">  Add Comment </Link>
+                     <NavLink to="/new" exact  className="link-decor" activeStyle={{ color:'blue'}}>  Add Comment </NavLink>
                    </td>
                    < td width="10" className="column"/>
                    < td width="10"/>
             
                    <td>
-                     <Link to="/comments" className="link-decor">   View All Comments </Link>
+                     <NavLink to="/comments" exact className="link-decor" activeStyle={{ color:'blue'}}>   View All Comments </NavLink>
                    </td>
                 </tr>
               </tbody>

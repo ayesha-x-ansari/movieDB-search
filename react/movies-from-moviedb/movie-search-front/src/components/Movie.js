@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SearchForm from './SearchForm';
+import MovieList from './MovieList';
 import '../App.css';
 import { fetchMovies } from '../actions/movieActions'; 
 
@@ -14,37 +15,14 @@ class Movie extends Component {
     this.props.fetchMovies("batman");
   }
 
-  render() {    
-    const movieItems = this.props.movies.map(movie => (
-      <div key={movie.id}>
-        <table key={movie.id}>
-          <tbody>
-            <tr className="shadow" >
-               <td> 
-                 <img alt="poster" width="200" src={"https://image.tmdb.org/t/p/w185" + movie.poster_path}/>
-               </td>
-               <td align="left" width="900px" className="padding-left">
-                 <h3>{movie.title}</h3>
-                 <p>{movie.overview}</p>
-                 <p>Release Date:   {movie.release_date}</p>
-                 <a href={'https://www.themoviedb.org/movie/' + movie.id} target="_blank" className="link">
-                 <input type="button"  value="View Detail" />  </a>
-                 <p></p>
-               </td>
-            </tr>
-          </tbody>
-        </table>  
-      </div>
-    ));
-
-    return (
-      <div>
-        <SearchForm/>
-        <h1>Movies</h1>
-        {movieItems}
-      </div>
-    );
-  }
+  render() {  
+  return (
+    <div>
+      <SearchForm/>
+      <MovieList
+          movies={this.props.movies} />  
+    </div>
+  )}       
 }
 
 Movie.propTypes = {

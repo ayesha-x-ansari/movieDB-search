@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {Link }from 'react-router-dom';
 import '../App.css';
 import {fetchComments} from '../actions/commentActions'; 
+import CommentList from './CommentList';
 
 
 class Comments extends Component{
@@ -19,29 +20,14 @@ class Comments extends Component{
     componentWillMount(){
       this.props.fetchComments();    
     } 
-  
-    renderComments(){
-      return this.props.comments.map((comment) => {
-       return (
-         <li key={comment.id}>
-           Comment by: {comment.commentator}  <br/>
-           <Link to={"comment/" + comment.id}>
-             {comment.title}  <br/> 
-          </Link>   
-         </li>  
+    
+    render() {
+        return (
+          <CommentList
+          comments={this.props.comments}
+        />
         )
-       });
-    }
-    render(){
-      return(
-        <div  align="left">
-        <h2> Comments Home Page </h2>
-        <ul>
-            {this.renderComments()}
-        </ul>
-        </div>
-      );
-    }
+      }
   }
 
   Comments.propTypes = {

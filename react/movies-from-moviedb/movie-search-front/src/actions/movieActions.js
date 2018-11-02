@@ -13,3 +13,5 @@ export const fetchMovies = (searchTerm) => dispatch => {
       })
     );
 };
+
+// .catch((error) => {console.log("Sorry something went wrong")})

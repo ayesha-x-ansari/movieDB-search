@@ -19,9 +19,7 @@ class SingleComment  extends Component{
 
   deleteButtonClick(){
     this.props.deleteComment(this.props.match.params.id)
-      .then(() => {
-        this.context.router.push('/');
-      }); 
+    this.props.history.push('/comments')
   }
 
   render(){
@@ -54,4 +52,3 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps, {fetchComment,  deleteComment })(SingleComment);
-
