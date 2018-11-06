@@ -9,35 +9,16 @@ import { fetchMovies } from '../actions/movieActions';
 class Movie extends Component {
     constructor(props) {
       super(props);  
-      this.state = {
-        searchTerm: "Batman"
-      };
-
-      this.onSearchChange = this.onSearchChange.bind(this);
-      this.onSearchSubmit = this.onSearchSubmit.bind(this);
-    
     }
     
   componentWillMount() {
     this.props.fetchMovies("batman");
   }
 
-  onSearchChange(event) {
-    this.setState({ searchTerm: event.target.value });
-  }
-
-  onSearchSubmit(event) {
-    if (!this.state.searchTerm) return
-    this.props.fetchMovies(this.state.searchTerm);
-    this.setState({ searchTerm: '' });
-    event.preventDefault();
-  }
   render() {  
   return (
     <div>
-      <SearchForm   value={this.state.searchTerm}
-            onChange={this.onSearchChange}
-            onSubmit={this.onSearchSubmit}/>
+      <SearchForm  fetchMovies={this.fetchMovies}/>
       <MovieList
           movies={this.props.movies} />  
     </div>
