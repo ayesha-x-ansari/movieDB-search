@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SearchForm from './SearchForm';
-import MovieList from './MovieList';
+import SearchForm from '../components/SearchForm';
+import MovieList from '../components/MovieList';
 import '../App.css';
 import { fetchMovies } from '../actions/movieActions'; 
 

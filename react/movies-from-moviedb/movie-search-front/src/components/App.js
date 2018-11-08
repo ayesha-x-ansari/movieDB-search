@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-import './App.css';
-import Navbar from './components/layout/Navbar'
-import Movie from './components/Movie';
-import Form from './components/CommentForm';
-import Comments from './components/Comments';
-import SingleComment from './components/SingleComment';
+import '../App.css';
+import Navbar from './layout/Navbar'
+import Movie from '../containers/Movie';
+import Form from './CommentForm';
+import Comments from '../containers/Comments';
+import SingleComment from '../containers/SingleComment';
 
-class App extends Component {
- render() {
+const App = props => {
     return (
       <Router >
        <div className="App">
@@ -21,7 +20,6 @@ class App extends Component {
 
       </Router>
     );
-  }
 }
 
 export default App

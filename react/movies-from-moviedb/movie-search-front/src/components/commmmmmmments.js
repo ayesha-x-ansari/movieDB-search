@@ -39,4 +39,4 @@ class Comments extends Component{
     return{comments: state.comments.all } 
   }
   
-  export default connect(mapStateToProps, {fetchComments })(Comments);
+  export default connect(mapStateToProps, {fetchComments })(Comments);w

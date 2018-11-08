@@ -1,14 +1,6 @@
 import React  from 'react';
 
 const SearchForm = (props)  => {
-  //class SearchForm extends Component {
-  //  componentDidMount() {
-  //    if (this.input) {
-  //      this.input.focus();
-  //    }
-  //  }
-  
-  //  render() {
   
   const {
     value,
@@ -16,9 +8,7 @@ const SearchForm = (props)  => {
     onSubmit,
   } = props;  
 
-
     return (
-
 
        <form onSubmit={onSubmit}>
         <input style={{
@@ -31,11 +21,8 @@ const SearchForm = (props)  => {
           paddingLeft: 16
         }} onChange={onChange} value={value} placeholder="Enter search term"/>
         <button className="btn=btn-search">Search</button>
-
         </form>
     )
 }
-
- // }
 
 export default SearchForm;
