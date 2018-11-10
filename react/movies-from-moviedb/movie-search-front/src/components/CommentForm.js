@@ -25,7 +25,9 @@ class ConnectedForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const { title, commentator, comment } = this.state;
+    console.log('A')
     this.props.addComment({ title, commentator, comment });
+    console.log('B')
     this.setState({ title: "", commentator: "" , comment: ""  });
     this.props.history.push('/comments')
     

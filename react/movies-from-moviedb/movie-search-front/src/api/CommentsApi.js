@@ -42,8 +42,26 @@ class CommentsApi {
         }).catch((error) => {
           return error;
         });
-      };   
-    }
+      };
+
+    // Update new comment in Database
+    static updateComment(comment) {
+      const request = new Request(`http://localhost:3001/api/v1/comments`, {
+        method: 'PATCH',
+        headers: new Headers({
+        'Content-Type': 'application/json'
+
+        }),
+        body: JSON.stringify(comment)
+      });
   
+      return fetch(request).then(response => {
+        return response.json();
+      }).catch((error) => {
+        return error;
+      });
+    }   
+    }
+      
     export default CommentsApi;
   
