@@ -16,6 +16,7 @@ const App = props => {
           <Route exact path="/new" component={Form}/>
           <Route exact path="/comments" component={Comments}/>
           <Route exact path="/comment/:id" component={SingleComment}/>
+        
         </div>
 
       </Router>

@@ -50,7 +50,6 @@ class CommentsApi {
         method: 'PATCH',
         headers: new Headers({
         'Content-Type': 'application/json'
-
         }),
         body: JSON.stringify(comment)
       });

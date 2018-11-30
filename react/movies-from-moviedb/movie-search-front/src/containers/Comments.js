@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {Link }from 'react-router-dom';
 import '../App.css';
 import {fetchComments, updateComment} from '../actions/commentActions'; 
 import CommentList from '../components/CommentList';
@@ -9,11 +8,14 @@ import CommentList from '../components/CommentList';
 
 class Comments extends Component { 
   constructor(props) {
-    super(props);  
+    super(props); 
+   
     this.state = {
-      comments: this.props.comments
+      comments: props.comments,
+      isSorted: false
     };
     this.updateComment = this.updateComment.bind(this);
+    this.sortByLikes = this.sortByLikes.bind(this);
   }
 
   updateComment(comment) {
@@ -24,17 +26,36 @@ class Comments extends Component {
 
   }
 
+  sortByLikes(comments)
+  {
+    let newComments = []
+    if (this.state.isSorted)  {
+      newComments = comments.sort((a,b) => a.count < b.count) 
+    }
+    else{
+      newComments = comments.sort((a,b) => a.count > b.count)  
+    }
+  
+    this.setState({
+      isSorted: !this.state.isSorted,
+      comments: newComments
+    })
+    console.log(this.state.comments)
+
+  }
+  
     componentWillMount(){
       this.props.fetchComments();    
     } 
     
     render() {
+      console.log(this.props.comments)
         return (
           <CommentList
           comments={this.props.comments}
           onIncrement={this.updateComment}
+          sortByLikes={this.sortByLikes}
        />
-     //<div>  ffff</div>
         )
       }
   }
@@ -46,6 +67,7 @@ class Comments extends Component {
   };
   
   function mapStateToProps(state){
+
     return{comments: state.comments.all } 
   }
   

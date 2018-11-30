@@ -14,7 +14,6 @@ export function addComment(comment) {
       throw(error);
     });
   };  
-  console.log('E')
 }
 
 
